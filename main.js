@@ -1,20 +1,21 @@
 
-const express = require('express');
-// const db = require("./db.js");
-// const { Router } = express
+import express from 'express';
+
+import db from "./db.js";
+//const  Router from 'express';
+//import productoRouter from "./routes/producto.js";
 import productoRouter from "./routes/producto.js";
-//const productoRouter = require("./routes/producto.js");
 
 const app = express();
 
-// const DB = new db("data");
+const DB = new db("data");
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 app.use(productoRouter);
 
-// // router.get('/recurso, (req, res) => {
-// //    res.send('get ok')
-// // })
+// router.get('/recurso, (req, res) => {
+//    res.send('get ok')
+// })
 
 
 // //GET: '/:id?' - Me permite listar todos los productos disponibles ó un producto por su id 

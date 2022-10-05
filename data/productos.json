@@ -1,6 +1,6 @@
 [
     {
-        "id": 1,
+        "id": "1",
         "timestamp": "",
         "nombre": "GUITARRA CLASICA VALENCIA DE ESTUDIO TAMAÑO MINI (22) C102 COLOR NATURAL",
         "descripcion": "Origen China - Cuerdas 6 - Tipo Equalizador: No - Corte: No - Mano: Diestro - Accesorio Incluido: No",
@@ -9,7 +9,7 @@
         "stock": 15
     },
     {
-        "id": 2,
+        "id": "2",
         "timestamp": "",
         "nombre": "TROMPETA LINCOLN WINDS EN BB CON TERMINACIÓN EN LACA DORADA",
         "descripcion": "Trompeta Lincoln Bb  en Dorado - Origen: China",
@@ -18,7 +18,7 @@
         "stock": 5
     },
     {
-        "id": 3,
+        "id": "3",
         "timestamp": "",
         "nombre": "SAXO ALTO STAGG LEVANTE EB CON ESTUCHE PARA ESTUDIO",
         "descripcion": "Saxo Alto Stagg levante Eb con estuche para estudio - Origen: China",
@@ -27,7 +27,7 @@
         "stock": 8
     },
     {
-        "id": 4,
+        "id": "4",
         "timestamp": "",
         "nombre": "CORNO JUPITER | BB | VALVULAS FOSFORADAS | ROSE BRASS LEADPIPE",
         "descripcion": "Corno Jupiter Bb - Válvulas fosforadas - Reose brass leadpipe c/estuche - JHR-754L - Origen: China",
@@ -36,7 +36,7 @@
         "stock": 4
     },
     {
-        "id": 5,
+        "id": "5",
         "timestamp": "",
         "nombre": "CLARINETE LINCOLN WINDS JYCL1301 CON 17 LLAVES",
         "descripcion": "Clarinete Lincoln Winds JYCL1301 con 17 llaves - Origen: China",
@@ -45,7 +45,7 @@
         "stock": 9
     },
     {
-        "id": 6,
+        "id": "6",
         "timestamp": "",
         "nombre": "VIOLIN DE ESTUDIO PALATINO 4/4",
         "descripcion": "Violín de estudio Palatino 4/4 - Rojo - Origen: China",
@@ -54,7 +54,7 @@
         "stock": 10
     },
     {
-        "id": 7,
+        "id": "7",
         "timestamp": "",
         "nombre": "AMPLIFICADOR DE AURICULARES ISK | 4 SALIDAS TRS | HA300",
         "descripcion": "Amplificador de Auriculares ISK - 4 Salidas TRS - HA300 - Fuente de Alimentación - Origen: China",
@@ -63,7 +63,7 @@
         "stock": 10
     },
     {
-        "id": 8,
+        "id": "8",
         "timestamp": "",
         "nombre": "MIXER 5 CANALES MACKIE MIX5 C/PHANTOM",
         "descripcion": "Mixer 5 canales Mackie Mix5 c/Phatom - Analógica - Fuente Externa -s/Efectos - Origen: China",
@@ -72,7 +72,7 @@
         "stock": 10
     },
     {
-        "id": 9,
+        "id": "9",
         "timestamp": "",
         "nombre": "CONSOLA DIGITAL ZOOM L-12 | 12 CANALES | MEZCLA VIVO",
         "descripcion": "Consola Digital Zoom L-12 12 Canales distintos (8 mono y 2 estéreo) con conexión XLR ó de 1/4 de pulgada Entradas RCA y TS de línea",
@@ -87,6 +87,23 @@
         "precio": "250.000",
         "urlfoto": "../assets/images/saxo-alto-stagg-levante-eb-con-estuche-para-estudio.jpg",
         "stock": 10,
-        "id": 11
+        "id": "11"
+    },
+    {
+        "timestamp": 1664797135063,
+        "nombre": "SAXO TENOR STAGG LEVANTE EB CON ESTUCHE PARA ESTUDIO",
+        "descripcion": "Saxo Tenor Stagg levante Eb con estuche para estudio - Origen: China",
+        "precio": "350.000",
+        "urlfoto": "../assets/images/saxo-alto-stagg-levante-eb-con-estuche-para-estudio.jpg",
+        "id": "13"
+    },
+    {
+        "timestamp": 1664967538198,
+        "nombre": "SAXO TENOR STAGG LEVANTE EB CON ESTUCHE PARA ESTUDIO",
+        "descripcion": "Saxo Tenor Stagg levante Eb con estuche para estudio - Origen: China",
+        "precio": "180.521",
+        "urlfoto": "../assets/images/saxo-alto-stagg-levante-eb-con-estuche-para-estudio.jpg",
+        "stock": "12",
+        "id": "12"
     }
 ]

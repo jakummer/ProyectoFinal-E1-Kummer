@@ -1,4 +1,6 @@
-const fs = require("fs");
+//const fs = require("fs");
+import fs from 'fs';
+
 
 class baseDeDatos {
   // * solo se invoca cuando se crea instancia
@@ -50,7 +52,7 @@ class baseDeDatos {
       );
       const productos = JSON.parse(data);
       const producto = productos.find(producto => producto.id === id);
-
+      
       if (producto){
         //return JSON.parse(producto);
         return (producto);
@@ -73,8 +75,8 @@ class baseDeDatos {
       );
       const productos = JSON.parse(data);
       const productoIndex = productos.findIndex(producto => producto.id === id);
-     
-      if (userIndex != -1){
+ 
+      if (productoIndex!= -1){
         productos.splice(productoIndex, 1);
         const stringProductos = JSON.stringify(productos);
         await fs.promises.writeFile(
@@ -95,27 +97,31 @@ class baseDeDatos {
 
 //actualizar producto por id
 async updateProductById(objProduct) {
-  const data = await fs.promises.readFile(
-    `${this.archivo}/productos.json`,
-    "utf-8"
-  );
-  const productos = JSON.parse(data);
-  const productoIndex = productos.findIndex(producto => producto.id === objProduct.id);
+      const data = await fs.promises.readFile(
+        `${this.archivo}/productos.json`,
+        "utf-8"
+      );
+      const productos = JSON.parse(data);
+      const productoIndex = productos.findIndex(producto => producto.id === objProduct.id);
 
-  productos[productoIndex].id = objProduct.id;
-  productos[productoIndex].nombre = objProduct.nombre;
-  productos[productoIndex].descripcion = objProduct.descripcion;
-  productos[productoIndex].precio = objProduct.precio;
-  productos[productoIndex].urlfoto = objProduct.urlfoto;
-  productos[productoIndex].stock = objProduct.strock;
+      
+      
+    console.log(objProduct.id);
+      productos[productoIndex].id = objProduct.id;
+      productos[productoIndex].nombre = objProduct.nombre;
+      productos[productoIndex].descripcion = objProduct.descripcion;
+      productos[productoIndex].precio = objProduct.precio;
+      productos[productoIndex].urlfoto = objProduct.urlfoto;
+      productos[productoIndex].stock = objProduct.strock;
 
- 
-  const productosString = JSON.stringify(productos);
-  await fs.promises.writeFile(
-    `${this.archivo}/productos.json`, productosString);
+    
+      const productosString = JSON.stringify(productos);
+      await fs.promises.writeFile(
+        `${this.archivo}/productos.json`, productosString);
 
-  return productos;
-}
+      return productos;
+    }
+
 
 }
 
@@ -124,4 +130,6 @@ async function start() {
   await db.createUser({ nombre: "Javier", correo: "jakummer@gmail.com" });
 
 }
-module.exports = baseDeDatos;
+//module.exports = baseDeDatos;
+
+export default baseDeDatos;
