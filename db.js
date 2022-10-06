@@ -9,7 +9,7 @@ class baseDeDatos {
     this.archivo = archivo;
   }
 
- 
+  //rutinas para Producto
   //cargar producto
   async createProduct(objProduct) {
     const data = await fs.promises.readFile(
@@ -123,7 +123,91 @@ async updateProductById(objProduct) {
     }
 
 
+  //////////////////////////////////////////////////////////////////////////////////////////////
+  //rutinas para Carrito
+  //crear carrito
+  async createCart(objCart) {
+    const data = await fs.promises.readFile(
+      `${this.archivo}/carrito.json`,
+      "utf-8"
+    );
+    console.log(objCart);
+    const carrito = JSON.parse(data);
+    const id = carrito.length + 1;
+    objCart.id = id;
+
+    console.log(objCart);
+    carrito.push(objCart);
+    const carritoString = JSON.stringify(carrito);
+    await fs.promises.writeFile(
+      `${this.archivo}/carrito.json`, carritoString);
+
+    return carrito;
+  }
+
+
+   //* eliminar carrito por id
+   async deleteCartById(id) {
+    try {
+      const data = await fs.promises.readFile(
+        `${this.archivo}/carrito.json`,
+        "utf-8"
+      );
+      const carrito = JSON.parse(data);
+      const carritoIndex = carrito.findIndex(carrito => carrito.id === id);
+ 
+      if (carritoIndex!= -1){
+        carrito.splice(carritoIndex, 1);
+        const stringCarrito = JSON.stringify(carrito);
+        await fs.promises.writeFile(
+          `${this.archivo}/productos.json`, stringCarrito );
+          
+        return carrito;
+
+      }else{
+        throw new Error("Carrito Inexistente");
+      }
+      
+    } catch (error) {
+      return [];
+    }
+  }
+
+
+
+  //* obtener todos los productos por el id de carrito
+  async getProductsByCartId(id) {
+    try {
+      const data = await fs.promises.readFile(
+        `${this.archivo}/carrito.json`,
+        "utf-8"
+      );
+      const carrito = JSON.parse(data);
+      const productos = carrito.find(carrito => carrito.id === id);
+      console.log(productos);
+      if (productos){
+        //return JSON.parse(producto);
+        return (productos);
+      }else{
+        throw new Error("Producto Inexistente");
+      }
+      
+    } catch (error) {
+      return [];
+    }
+  }
+
+
+
 }
+
+
+
+
+
+
+
+
 
 async function start() {
   const db = new baseDeDatos("data");

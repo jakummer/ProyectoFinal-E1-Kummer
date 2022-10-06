@@ -13,44 +13,51 @@ const routerCarrito = express.Router();
 //   res.send(productos);
 // });
 
-
+//mostrar todos los productos de un carrito
 routerCarrito.get("/api/carrito/:id/productos", async (req, res) =>{
   const { id } = req.params;
-  const producto = await DB.getCartById(id);
+  const carrito = await DB.getProductsByCartId(id);
   //res.render("main", { layout: "altaproductos", productos });
-  res.send(producto);
+  res.send(carrito);
 
 });
 
 
 //borra un carrito por su id (disponible para clientes)
-routerProducto.delete("/api/carrito/:id", async (req, res) =>{
+routerCarrito.delete("/api/carrito/:id", async (req, res) =>{
   const { id } = req.params;
-  const producto = await DB.deleteCartById(id);
+  const carrito = await DB.deleteCartById(id);
  // res.render("main", { layout: "altaproductos", productos });
- res.send(producto);
+ res.send(carrito);
 });
 
 
 //borra un carrito por su id (disponible para clientes)
-routerProducto.delete("/api/carrito/:id", async (req, res) =>{
+routerCarrito.delete("/api/carrito/:id/productos/:id_prod", async (req, res) =>{
     const { id } = req.params;
-    const producto = await DB.deleteProductCartById(id);
+    const carrito = await DB.deleteProductCartById(id);
    // res.render("main", { layout: "altaproductos", productos });
-   res.send(producto);
+   res.send(carrito);
   });
-  
+
+
 
 //para crear carrito
-routerProducto.post("/api/carrito/", async (req, res) =>{
+routerCarrito.post("/api/carrito", async (req, res) =>{
   //const { nombre, precio, urlimagen } = req.body;
-  const body =   { timestamp: Date.now(), nombre : "SAXO TENOR STAGG LEVANTE EB CON ESTUCHE PARA ESTUDIO",
- descripcion : "Saxo Tenor Stagg levante Eb con estuche para estudio - Origen: China",
- precio : "180.521",
- urlfoto : "../assets/images/saxo-alto-stagg-levante-eb-con-estuche-para-estudio.jpg",
- stock : "14"};
+  const body =   { id: "1",
+  timestamp: "1664797135063",
+  producto:{
+      id:"1",
+      timestamp:"1664797135063",
+      nombre:"GUITARRA CLASICA VALENCIA DE ESTUDIO TAMAÑO MINI (22) C102 COLOR NATURAL",
+      descripcion:"Origen China - Cuerdas 6 - Tipo Equalizador: No - Corte: No - Mano: Diestro - Accesorio Incluido: No",
+      codigo:"1",
+      urlfoto:"../assets/images/guitarra-clasica-valencia-de-estudio-tamano-mini-22-vc102-color-natural.jpg",
+      precio:"20.748"
+  }};
 
-
+  console.log(body);
  const data = await DB.createCart(body);
  //return res.redirect("/altaproductos");
   
@@ -58,7 +65,7 @@ routerProducto.post("/api/carrito/", async (req, res) =>{
 
 
 //para agregar productos al carrito
-routerProducto.post("/api/carrito/:id/productos", async (req, res) =>{
+routerCarrito.post("/api/carrito/:id/productos", async (req, res) =>{
     //const { nombre, precio, urlimagen } = req.body;
    
    const body =   { timestamp: Date.now(), nombre : "SAXO TENOR STAGG LEVANTE EB CON ESTUCHE PARA ESTUDIO",

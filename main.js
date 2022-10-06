@@ -5,6 +5,7 @@ import db from "./db.js";
 //const  Router from 'express';
 //import productoRouter from "./routes/producto.js";
 import productoRouter from "./routes/producto.js";
+import carritoRouter from "./routes/carrito.js";
 
 const app = express();
 
@@ -12,6 +13,7 @@ const DB = new db("data");
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 app.use(productoRouter);
+app.use(carritoRouter);
 
 // router.get('/recurso, (req, res) => {
 //    res.send('get ok')
