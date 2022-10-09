@@ -1,5 +1,8 @@
 //const fs = require("fs");
+
 import fs from 'fs';
+
+
 
 
 class baseDeDatos {
@@ -17,9 +20,9 @@ class baseDeDatos {
       "utf-8"
     );
     const productos = JSON.parse(data);
-    const id = productos.length + 1;
-    objProduct.id = id;
-    console.log(objProduct);
+    //const id = productos.length + 1;
+    //objProduct.id = id;
+
     productos.push(objProduct);
     const productosString = JSON.stringify(productos);
     await fs.promises.writeFile(
@@ -103,16 +106,13 @@ async updateProductById(objProduct) {
       );
       const productos = JSON.parse(data);
       const productoIndex = productos.findIndex(producto => producto.id === objProduct.id);
-
-      
-      
-    console.log(objProduct.id);
+     
       productos[productoIndex].id = objProduct.id;
       productos[productoIndex].nombre = objProduct.nombre;
       productos[productoIndex].descripcion = objProduct.descripcion;
       productos[productoIndex].precio = objProduct.precio;
       productos[productoIndex].urlfoto = objProduct.urlfoto;
-      productos[productoIndex].stock = objProduct.strock;
+      productos[productoIndex].stock = objProduct.stock;
 
     
       const productosString = JSON.stringify(productos);
@@ -123,6 +123,7 @@ async updateProductById(objProduct) {
     }
 
 
+
   //////////////////////////////////////////////////////////////////////////////////////////////
   //rutinas para Carrito
   //crear carrito
@@ -131,12 +132,11 @@ async updateProductById(objProduct) {
       `${this.archivo}/carrito.json`,
       "utf-8"
     );
-    console.log(objCart);
+    
     const carrito = JSON.parse(data);
     const id = carrito.length + 1;
     objCart.id = id;
 
-    console.log(objCart);
     carrito.push(objCart);
     const carritoString = JSON.stringify(carrito);
     await fs.promises.writeFile(
@@ -154,13 +154,13 @@ async updateProductById(objProduct) {
         "utf-8"
       );
       const carrito = JSON.parse(data);
-      const carritoIndex = carrito.findIndex(carrito => carrito.id === id);
+      const carritoIndex = carrito.findIndex(carrito => carrito.id === parseInt(id));
  
-      if (carritoIndex!= -1){
+      if (carritoIndex != -1){
         carrito.splice(carritoIndex, 1);
         const stringCarrito = JSON.stringify(carrito);
         await fs.promises.writeFile(
-          `${this.archivo}/productos.json`, stringCarrito );
+          `${this.archivo}/carrito.json`, stringCarrito );
           
         return carrito;
 
@@ -183,13 +183,13 @@ async updateProductById(objProduct) {
         "utf-8"
       );
       const carrito = JSON.parse(data);
-      const productos = carrito.find(carrito => carrito.id === id);
-      console.log(productos);
+      const productos = carrito.find(carrito => carrito.id === parseInt(id));
+ 
       if (productos){
         //return JSON.parse(producto);
         return (productos);
       }else{
-        throw new Error("Producto Inexistente");
+        throw new Error("Carrito vacío");
       }
       
     } catch (error) {
@@ -198,12 +198,71 @@ async updateProductById(objProduct) {
   }
 
 
+   //agregar producto al carrito
+   async addProductToCart(id, objCart) {
+    const data = await fs.promises.readFile(
+      `${this.archivo}/carrito.json`,
+      "utf-8"
+    );
+  
+    const carrito = JSON.parse(data);
+    const carritoAct = carrito.find(carrito => carrito.id === parseInt(id));
+    //const carritoIndex = carrito.findIndex(carrito => carrito.id === id);
+    
+    //console.log(carrito);
+    console.log(carritoAct);
+    console.log(objCart);
+    console.log(id);
+   
+   carritoAct.productos.push(objCart);
+
+   const carritoString = JSON.stringify(carrito);
+    await fs.promises.writeFile(
+      `${this.archivo}/carrito.json`, carritoString);
+
+    return carrito;
+  }
+
+
+
+  //* eliminar producto por id de un carrito 
+  async deleteProductCartById(id, id_prod) {
+    try {
+      const data = await fs.promises.readFile(
+        `${this.archivo}/carrito.json`,
+        "utf-8"
+      );
+       
+      console.log(id, id_prod);
+  
+      const carrito = JSON.parse(data);
+      const carritoAct = carrito.find(carrito => carrito.id === parseInt(id));
+      console.log(carritoAct);
+
+      const productoIndex = carritoAct.findIndex(producto => carritoAct.productos.id_prod === id_prod);
+      
+      console.log(productoIndex);
+     
+        if (productoIndex != -1){
+          carritoAct.producto.splice(productoIndex);
+          const stringCarrito = JSON.stringify(carrito);
+          await fs.promises.writeFile(
+            `${this.archivo}/carrito.json`, stringCarrito );
+            
+          return carrito;
+
+        }else{
+          throw new Error("Producto Inexistente");
+        }
+        
+    } catch (error) {
+      return [];
+    }
+  }
+
+
 
 }
-
-
-
-
 
 
 

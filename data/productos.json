@@ -1,1 +1,101 @@
-[{"id":"1","timestamp":"1664797135063","producto":{"id":"1","timestamp":"1664797135063","nombre":"GUITARRA CLASICA VALENCIA DE ESTUDIO TAMAÑO MINI (22) C102 COLOR NATURAL","descripcion":"Origen China - Cuerdas 6 - Tipo Equalizador: No - Corte: No - Mano: Diestro - Accesorio Incluido: No","codigo":"1","urlfoto":"../assets/images/guitarra-clasica-valencia-de-estudio-tamano-mini-22-vc102-color-natural.jpg","precio":"20.748"}}]
+[
+    {
+        "id": "I1000",
+        "timestamp": 1665242690384,
+        "nombre": "GUITARRA CLASICA VALENCIA DE ESTUDIO TAMAÑO MINI (22) C102 COLOR NATURAL",
+        "descripcion": "Origen China - Cuerdas 6 - Tipo Equalizador: No - Corte: No - Mano: Diestro - Accesorio Incluido: No",
+        "precio": "20.748",
+        "urlfoto": "../assets/images/guitarra-clasica-valencia-de-estudio-tamano-mini-22-vc102-color-natural.jpg",
+        "stock": 15
+    },
+    {
+        "id": "I1001",
+        "timestamp": 1665242690384,
+        "nombre": "TROMPETA LINCOLN WINDS EN BB CON TERMINACIÓN EN LACA DORADA",
+        "descripcion": "Trompeta Lincoln Bb  en Dorado - Origen: China",
+        "precio": "80.582",
+        "urlfoto": "../assets/images/trompeta-lincoln-winds-en-bb-con-terminacion-en-laca-dorada.jpg",
+        "stock": 5
+    },
+    {
+        "id": "I1002",
+        "timestamp": 1665242690384,
+        "nombre": "SAXO ALTO STAGG LEVANTE EB CON ESTUCHE PARA ESTUDIO",
+        "descripcion": "Saxo Alto Stagg levante Eb con estuche para estudio - Origen: China",
+        "precio": "160.221",
+        "urlfoto": "../assets/images/saxo-alto-stagg-levante-eb-con-estuche-para-estudio.jpg",
+        "stock": 8
+    },
+    {
+        "id": "I1003",
+        "timestamp": 1665242690384,
+        "nombre": "CORNO JUPITER | BB | VALVULAS FOSFORADAS | ROSE BRASS LEADPIPE",
+        "descripcion": "Corno Jupiter Bb - Válvulas fosforadas - Reose brass leadpipe c/estuche - JHR-754L - Origen: China",
+        "precio": "312.528",
+        "urlfoto": "../assets/images/corno-jupiter-bb-valvulas-fosforadas-rose-brass-leadpipe-c-estuche-jhr-754.jpg",
+        "stock": 4
+    },
+    {
+        "id": "I1004",
+        "timestamp": 1665242690384,
+        "nombre": "CLARINETE LINCOLN WINDS JYCL1301 CON 17 LLAVES",
+        "descripcion": "Clarinete Lincoln Winds JYCL1301 con 17 llaves - Origen: China",
+        "precio": "144.998",
+        "urlfoto": "../assets/images/clarinete-lincoln-winds-jycl1301-con-17-llaves-y-estuche-rigido.jpg",
+        "stock": 9
+    },
+    {
+        "id": "I1005",
+        "timestamp": 1665242690384,
+        "nombre": "VIOLIN DE ESTUDIO PALATINO 4/4",
+        "descripcion": "Violín de estudio Palatino 4/4 - Rojo - Origen: China",
+        "precio": "25.3669",
+        "urlfoto": "../assets/images/violin-de-estudio-palatino-44-color-rojo.jpg",
+        "stock": 10
+    },
+    {
+        "id": "S1000",
+        "timestamp": 1665242690384,
+        "nombre": "AMPLIFICADOR DE AURICULARES ISK | 4 SALIDAS TRS | HA300",
+        "descripcion": "Amplificador de Auriculares ISK - 4 Salidas TRS - HA300 - Fuente de Alimentación - Origen: China",
+        "precio": "25.366",
+        "urlfoto": "../assets/images/amplificador-de-auriculares-isk-4-salidas-trs-ha300.jpg",
+        "stock": 10
+    },
+    {
+        "id": "S1001",
+        "timestamp": 1665242690384,
+        "nombre": "MIXER 5 CANALES MACKIE MIX5 C/PHANTOM",
+        "descripcion": "Mixer 5 canales Mackie Mix5 c/Phatom - Analógica - Fuente Externa -s/Efectos - Origen: China",
+        "precio": "27.200",
+        "urlfoto": "../assets/images/mixer-5-canales-mackie-mix5-cphantom.jpg",
+        "stock": 10
+    },
+    {
+        "id": "S1002",
+        "timestamp": 1665242690384,
+        "nombre": "CONSOLA DIGITAL ZOOM L-12 | 12 CANALES | MEZCLA VIVO",
+        "descripcion": "Consola Digital Zoom L-12 12 Canales distintos (8 mono y 2 estéreo) con conexión XLR ó de 1/4 de pulgada Entradas RCA y TS de línea",
+        "precio": "224.659",
+        "urlfoto": "../assets/images/consola-digital-zoom-l-12-12-canales-mezcla-vivo-monitores-grabacion.jpg",
+        "stock": 10
+    },
+    {
+        "timestamp": 1665242690384,
+        "id": "I2300",
+        "nombre": "FLUGEL",
+        "descripcion": "ORIGEN CHINA",
+        "precio": "224.000",
+        "stock": "12",
+        "urlfoto": "../assets/images/consola-digital-zoom-l-12-12-canales-mezcla-vivo-monitores-grabacion.jpg"
+    },
+    {
+        "timestamp": 1665279629839,
+        "id": "I2350",
+        "nombre": "FLAUTA DULCE",
+        "descripcion": "ORIGEN MARRUECOS",
+        "precio": "16.000",
+        "urlfoto": "../assets/images/consola-digital-zoom-l-12-12-canales-mezcla-vivo-monitores-grabacion.jpg",
+        "stock": "12"
+    }
+]
