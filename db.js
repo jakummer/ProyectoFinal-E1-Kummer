@@ -127,6 +127,7 @@ async updateProductById(objProduct) {
   //////////////////////////////////////////////////////////////////////////////////////////////
   //rutinas para Carrito
   //crear carrito
+ 
   async createCart(objCart) {
     const data = await fs.promises.readFile(
       `${this.archivo}/carrito.json`,
@@ -209,10 +210,7 @@ async updateProductById(objProduct) {
     const carritoAct = carrito.find(carrito => carrito.id === parseInt(id));
     //const carritoIndex = carrito.findIndex(carrito => carrito.id === id);
     
-    //console.log(carrito);
-    console.log(carritoAct);
-    console.log(objCart);
-    console.log(id);
+
    
    carritoAct.productos.push(objCart);
 
@@ -233,34 +231,32 @@ async updateProductById(objProduct) {
         "utf-8"
       );
        
-      console.log(id, id_prod);
-  
+    
       const carrito = JSON.parse(data);
       const carritoAct = carrito.find(carrito => carrito.id === parseInt(id));
-      console.log(carritoAct);
-
-      const productoIndex = carritoAct.findIndex(producto => carritoAct.productos.id_prod === id_prod);
-      
-      console.log(productoIndex);
+ 
      
-        if (productoIndex != -1){
-          carritoAct.producto.splice(productoIndex);
-          const stringCarrito = JSON.stringify(carrito);
-          await fs.promises.writeFile(
-            `${this.archivo}/carrito.json`, stringCarrito );
-            
-          return carrito;
+          for (var i = 0; i < carritoAct.productos.length; i++) {
+          
 
-        }else{
-          throw new Error("Producto Inexistente");
-        }
+            if (carritoAct.productos[i].id_prod === id_prod) {
+          
+              console.log(i);
+                carritoAct.productos.splice(i,1);
+                const stringCarrito = JSON.stringify(carrito);
+                await fs.promises.writeFile(
+                  `${this.archivo}/carrito.json`, stringCarrito );
+                  
+                return carrito;
+              
+            }
+          }    
+          
         
     } catch (error) {
       return [];
     }
   }
-
-
 
 }
 
